@@ -16,7 +16,10 @@ void termistorul(){
 	gr->SetTitle("Termistorul : ln R in functie de temperatura");
 
 	Double_t slope = gr->GetFunction("pol1")->GetParameter(1) * 10000;
-	cout << "Panta este: " << slope << '\n';
+	cout << "Panta este: " << slope << "K" << '\n';
+
+	Double_t deltaE = 2*slope*8.6*0.00001;
+cout << "Lungimea bandei interzise este: " << deltaE << "eV" << '\n';
 
 	c1->SaveAs("termistorul.pdf");
 }
